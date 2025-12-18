@@ -3,65 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TravelMate — інтерактивний веб-портал для мандрівників: тури, маршрути, поради та планування подорожей.">
-  <title>TravelMate — Головна</title>
+  <meta name="description" content="TravelMate — сучасний веб-портал для мандрівників: тури, маршрути, поради та планування подорожей.">
+  <title>TravelMate — Плануй подорожі легко</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
 </head>
 
 <body>
   <header class="site-header">
-  
   <div class="container header-inner">
     <a class="brand" href="index.html" aria-label="TravelMate — на головну">
-      <img src="images/logo.png" alt="Логотип TravelMate: валіза та глобус" width="40" height="40" loading="eager">
+      <img src="images/logo.png" alt="Логотип TravelMate: валіза та глобус" width="44" height="44" loading="eager">
       <span class="brand-name">TravelMate</span>
     </a>
     <nav class="site-nav" aria-label="Головна навігація">
-  <ul>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="visually-hidden">Відкрити меню</span>
+  </button>
+  <ul id="nav-list" class="nav-list">
     <li><a href="index.html">Головна</a></li>
     <li><a href="catalog.html">Тури</a></li>
     <li><a href="about.html">Про нас</a></li>
     <li><a href="contacts.html">Контакти</a></li>
   </ul>
 </nav>
+    <button class="theme-toggle" type="button" data-action="toggle-theme" aria-pressed="false">Змінити тему</button>
   </div>
 </header>
-
-  <main id="main" class="site-main">
+  <main class="site-main">
     <section class="hero">
-      <div class="container">
-        <h1>Відкривай світ з TravelMate</h1>
-        <p>Зробіть свої подорожі доступними та організованими — з маршрутами, порадами та готовими турами.</p>
-
-        <div class="search-box" role="search" aria-label="Пошук турів">
-          <form action="catalog.html" method="get">
-            <label class="visually-hidden" for="destination">Куди хочете поїхати?</label>
-            <input id="destination" type="text" placeholder="Куди хочете поїхати?" name="destination" autocomplete="off">
-            <button type="submit">Знайти</button>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Відкривай світ з TravelMate</h1>
+          <p>Підбирай напрямки, порівнюй тури та плануй подорожі без зайвого стресу. Ми зібрали короткі програми, корисні поради та зрозумілі умови.</p>
+          <form class="search" action="catalog.html" method="get" role="search" aria-label="Пошук турів">
+            <label class="visually-hidden" for="q">Куди хочете поїхати?</label>
+            <input id="q" name="destination" type="text" placeholder="Куди хочете поїхати? (наприклад: Карпати, Іспанія)">
+            <button class="btn btn-accent" type="submit">Знайти</button>
           </form>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="catalog.html">Перейти до каталогу</a>
+            <a class="btn btn-ghost" href="contacts.html">Задати питання</a>
+          </div>
         </div>
-
-        <div class="hero-actions">
-          <a class="button secondary" href="catalog.html">Перейти до каталогу</a>
-          <a class="button" href="contacts.html">Звʼязатися з нами</a>
+        <div class="hero-card tour-highlight tour-card js-tour-card">
+          <div class="badge">ТОП</div>
+          <h2 class="card-title">Вікенд у Карпатах</h2>
+          <p class="muted">3 дні / 2 ночі • трансфер • сніданки</p>
+          <p class="price">від 9 800 грн</p>
+          <a class="btn btn-accent" href="tour_details.html">Детальніше</a>
         </div>
       </div>
     </section>
 
-    <section class="features">
+    <section class="section">
       <div class="container">
-        <h2>Чому ми?</h2>
-        <ul class="feature-list">
-          <li><h3>Інтерактивні мапи та маршрути</h3><p>Плануйте поїздки швидко, зручно та зрозуміло.</p></li>
-          <li><h3>Перевірена інформація</h3><p>Опис напрямків, поради та рекомендації для мандрівників.</p></li>
-          <li><h3>Спільнота мандрівників</h3><p>Відгуки, досвід та корисні лайфхаки для різних бюджетів.</p></li>
-        </ul>
+        <h2>Чому TravelMate</h2>
+        <div class="feature-grid">
+          <article class="feature"><h3>Зрозумілі програми</h3><p>Коротко про маршрут, складність, що включено, та що взяти з собою.</p></article>
+          <article class="feature"><h3>Сучасний інтерфейс</h3><p>Адаптивний дизайн для телефона, планшета та ПК — без хаосу на екрані.</p></article>
+          <article class="feature"><h3>Поради мандрівникам</h3><p>Лайфхаки щодо бюджету, транспорту, сезонності та безпеки.</p></article>
+        </div>
+
+        <div class="accordion">
+          <button class="accordion__btn btn btn-ghost" type="button" data-action="toggle-more" aria-expanded="false" aria-controls="more-text">Показати більше</button>
+          <div id="more-text" class="accordion__panel" hidden>
+            <p>TravelMate — навчальний проєкт, але ми наблизили структуру та дизайн до реальних тревел-платформ: використали картки, сітки, адаптивну навігацію, форму з перевірками та інтерактивні елементи.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-
   <footer class="site-footer">
   <div class="container footer-inner">
+    <p class="footer-note">
+      Порада: для найкращих цін перевіряйте сезонність та бронюйте завчасно.
+    </p>
     <p>&copy; 2025 TravelMate. Всі права захищено.</p>
+    <p class="footer-meta">Сьогодні: <span id="footer-date"></span></p>
   </div>
 </footer>
 </body>

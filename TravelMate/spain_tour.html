@@ -3,54 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Деталі туру: Сонячна Іспанія — Барселона та узбережжя, програма, що включено та орієнтовна ціна.">
   <title>Сонячна Іспанія — TravelMate</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
 </head>
+
 <body>
-<header class="site-header">
+  <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="index.html">
-      <img src="images/logo.png" alt="Логотип TravelMate: валіза та глобус" width="40" height="40">
+    <a class="brand" href="index.html" aria-label="TravelMate — на головну">
+      <img src="images/logo.png" alt="Логотип TravelMate: валіза та глобус" width="44" height="44" loading="eager">
       <span class="brand-name">TravelMate</span>
     </a>
-    <nav class="site-nav">
-      <ul>
-        <li><a href="index.html">Головна</a></li>
-        <li><a href="catalog.html">Тури</a></li>
-        <li><a href="about.html">Про нас</a></li>
-        <li><a href="contacts.html">Контакти</a></li>
-      </ul>
-    </nav>
+    <nav class="site-nav" aria-label="Головна навігація">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="visually-hidden">Відкрити меню</span>
+  </button>
+  <ul id="nav-list" class="nav-list">
+    <li><a href="index.html">Головна</a></li>
+    <li><a href="catalog.html">Тури</a></li>
+    <li><a href="about.html">Про нас</a></li>
+    <li><a href="contacts.html">Контакти</a></li>
+  </ul>
+</nav>
+    <button class="theme-toggle" type="button" data-action="toggle-theme" aria-pressed="false">Змінити тему</button>
   </div>
 </header>
-
-<main class="site-main">
-  <section class="page-hero">
-    <div class="container">
-      <h1>Сонячна Іспанія</h1>
-      <p>Маршрут для відпочинку на узбережжі та знайомства з культурою.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container tour-details">
-      <img src="images/tour-2.jpg" alt="Пляж в Іспанії" width="960" height="540">
-      <section class="card">
-        <h2>Опис туру</h2>
-        <p>Семиденна подорож до Іспанії з відвідуванням Барселони та узбережжя Середземного моря.</p>
-        <ul class="tour-meta">
-          <li><strong>Тривалість:</strong> 7 днів</li>
-          <li><strong>Бюджет:</strong> 12000 грн</li>
-          <li><strong>Складність:</strong> Легка</li>
-        </ul>
-        <button class="button" type="button">Забронювати</button>
-      </section>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
+  <main class="site-main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Сонячна Іспанія</h1>
+        <p class="muted">7 днів / 6 ночей • готель 4★ • сніданки</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container two-col">
+        <img class="hero-image" src="images/tour-2.jpg" alt="Пляж в Іспанії" loading="lazy">
+        <article class="card tour-info js-tour-card">
+          <h2>Опис туру</h2>
+          <p>Програма для поєднання міста й моря: декілька днів у Барселоні з прогулянками та екскурсіями, а потім — відпочинок на узбережжі. Є час і для музеїв, і для пляжу, і для смачної кухні.</p>
+          <h3>Що включено</h3>
+          <ul><li>Проживання 6 ночей (готель 4★)</li><li>Сніданки</li><li>Трансфер аеропорт ↔ готель</li><li>Організаційний супровід</li></ul>
+          <h3>Порада</h3>
+          <p class="muted">Закладіть додатково бюджет на міський транспорт, музеї та харчування — так буде комфортніше планувати витрати.</p>
+          <p class="price">від 42 000 грн / особа</p>
+          <button class="btn btn-primary" type="button" data-action="book">Забронювати</button>
+          <p class="form-success" id="booking-hint" hidden>Дякуємо! Заявку прийнято. Ми звʼяжемося з вами найближчим часом.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
   <div class="container footer-inner">
+    <p class="footer-note">
+      Порада: для найкращих цін перевіряйте сезонність та бронюйте завчасно.
+    </p>
     <p>&copy; 2025 TravelMate. Всі права захищено.</p>
+    <p class="footer-meta">Сьогодні: <span id="footer-date"></span></p>
   </div>
 </footer>
 </body>

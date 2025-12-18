@@ -3,61 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TravelMate — інтерактивний веб-портал для мандрівників: тури, маршрути, поради та планування подорожей.">
+  <meta name="description" content="Каталог турів TravelMate: Карпати та Іспанія з деталями, цінами та короткими програмами.">
   <title>Каталог турів — TravelMate</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
 </head>
 
 <body>
   <header class="site-header">
-  
   <div class="container header-inner">
     <a class="brand" href="index.html" aria-label="TravelMate — на головну">
-      <img src="images/logo.png" alt="Логотип TravelMate: валіза та глобус" width="40" height="40" loading="eager">
+      <img src="images/logo.png" alt="Логотип TravelMate: валіза та глобус" width="44" height="44" loading="eager">
       <span class="brand-name">TravelMate</span>
     </a>
     <nav class="site-nav" aria-label="Головна навігація">
-  <ul>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="visually-hidden">Відкрити меню</span>
+  </button>
+  <ul id="nav-list" class="nav-list">
     <li><a href="index.html">Головна</a></li>
     <li><a href="catalog.html">Тури</a></li>
     <li><a href="about.html">Про нас</a></li>
     <li><a href="contacts.html">Контакти</a></li>
   </ul>
 </nav>
+    <button class="theme-toggle" type="button" data-action="toggle-theme" aria-pressed="false">Змінити тему</button>
   </div>
 </header>
-
-  <main id="main" class="site-main">
+  <main class="site-main">
     <section class="page-hero">
       <div class="container">
-        <h1>Каталог подорожей</h1>
-        <p>Оберіть напрямок та перегляньте деталі туру.</p>
+        <h1>Каталог турів</h1>
+        <p class="muted">Оберіть напрямок і перегляньте деталі. Ціни орієнтовні та можуть змінюватися залежно від сезону.</p>
       </div>
     </section>
-
     <section class="section">
       <div class="container">
-        <div class="tour-list">
-          <article class="card tour-card">
-            <img src="images/tour-1.jpg" alt="Пейзаж Карпат" width="360" height="240" loading="lazy">
-            <h2 class="card-title">Вікенд у Карпатах</h2>
-            <p>Бюджетна подорож для студентів. Маршрути та лайфхаки.</p>
-            <a class="button" href="tour_details.html">Детальніше</a>
+        <div class="tour-grid">
+          <article class="tour-card js-tour-card">
+            <img src="images/tour-1.jpg" alt="Пейзаж Карпат" loading="lazy">
+            <div class="tour-card__body">
+              <div class="tour-meta"><span class="chip">Україна</span><span class="chip">3 дні</span><span class="chip">Легка</span></div>
+              <h2 class="card-title">Вікенд у Карпатах</h2>
+              <p class="muted">Піші прогулянки, водоспади, свіже повітря та озеро Синевир. Підійде для першої поїздки в гори.</p>
+              <p class="price">від 9 800 грн</p>
+              <a class="btn btn-accent" href="tour_details.html">Детальніше</a>
+            </div>
           </article>
 
-          <article class="card tour-card">
-            <img src="images/tour-2.jpg" alt="Пляж в Іспанії" width="360" height="240" loading="lazy">
-            <h2 class="card-title">Сонячна Іспанія</h2>
-            <p>Готовий маршрут на 7 днів для відпочинку та нових вражень.</p>
-            <a class="button" href="spain_tour.html">Детальніше</a>
+          <article class="tour-card js-tour-card">
+            <img src="images/tour-2.jpg" alt="Пляж в Іспанії" loading="lazy">
+            <div class="tour-card__body">
+              <div class="tour-meta"><span class="chip">Іспанія</span><span class="chip">7 днів</span><span class="chip">Комфорт</span></div>
+              <h2 class="card-title">Сонячна Іспанія</h2>
+              <p class="muted">Барселона + відпочинок на узбережжі. Баланс прогулянок, музеїв і пляжного релаксу.</p>
+              <p class="price">від 42 000 грн</p>
+              <a class="btn btn-accent" href="spain_tour.html">Детальніше</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
   </main>
-
   <footer class="site-footer">
   <div class="container footer-inner">
+    <p class="footer-note">
+      Порада: для найкращих цін перевіряйте сезонність та бронюйте завчасно.
+    </p>
     <p>&copy; 2025 TravelMate. Всі права захищено.</p>
+    <p class="footer-meta">Сьогодні: <span id="footer-date"></span></p>
   </div>
 </footer>
 </body>

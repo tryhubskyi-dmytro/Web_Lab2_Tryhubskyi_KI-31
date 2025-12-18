@@ -3,60 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TravelMate — інтерактивний веб-портал для мандрівників: тури, маршрути, поради та планування подорожей.">
+  <meta name="description" content="Деталі туру: Вікенд у Карпатах — маршрут, програма, що включено та орієнтовна ціна.">
   <title>Вікенд у Карпатах — TravelMate</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
 </head>
 
 <body>
   <header class="site-header">
-  
   <div class="container header-inner">
     <a class="brand" href="index.html" aria-label="TravelMate — на головну">
-      <img src="images/logo.png" alt="Логотип TravelMate: валіза та глобус" width="40" height="40" loading="eager">
+      <img src="images/logo.png" alt="Логотип TravelMate: валіза та глобус" width="44" height="44" loading="eager">
       <span class="brand-name">TravelMate</span>
     </a>
     <nav class="site-nav" aria-label="Головна навігація">
-  <ul>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="visually-hidden">Відкрити меню</span>
+  </button>
+  <ul id="nav-list" class="nav-list">
     <li><a href="index.html">Головна</a></li>
     <li><a href="catalog.html">Тури</a></li>
     <li><a href="about.html">Про нас</a></li>
     <li><a href="contacts.html">Контакти</a></li>
   </ul>
 </nav>
+    <button class="theme-toggle" type="button" data-action="toggle-theme" aria-pressed="false">Змінити тему</button>
   </div>
 </header>
-
-  <main id="main" class="site-main">
+  <main class="site-main">
     <section class="page-hero">
       <div class="container">
         <h1>Вікенд у Карпатах</h1>
-        <p>Коротка мандрівка горами з відвідуванням озера Синевир.</p>
+        <p class="muted">3 дні / 2 ночі • трансфер • сніданки включено</p>
       </div>
     </section>
-
-    <article class="section">
-      <div class="container tour-details">
-        <img class="tour-hero-image" src="images/tour-1-large.jpg" alt="Гори Карпати влітку" width="960" height="540" loading="lazy">
-
-        <section class="card">
+    <section class="section">
+      <div class="container two-col">
+        <img class="hero-image" src="images/tour-1.jpg" alt="Гори Карпати влітку" loading="lazy">
+        <article class="card tour-info js-tour-card">
           <h2>Опис туру</h2>
-          <p>Захоплююча подорож горами з відвідуванням озера Синевир. Ідеально підходить для короткого перезавантаження.</p>
-          <ul class="tour-meta">
-            <li><strong>Тривалість:</strong> 3 дні</li>
-            <li><strong>Бюджет:</strong> 3000 грн</li>
-            <li><strong>Складність:</strong> Легка</li>
-          </ul>
-
-          <button class="button" type="button" data-action="book">Забронювати</button>
-          <p class="hint" id="booking-hint" hidden>Дякуємо! Заявку прийнято. Ми звʼяжемося з вами найближчим часом.</p>
-        </section>
+          <p>Тур для тих, хто хоче відчути Карпати без складних підйомів і поспіху: панорамні локації, місцева кухня та озеро Синевир. Темп спокійний — з часом на фото та відпочинок.</p>
+          <h3>Що включено</h3>
+          <ul><li>Трансфер за маршрутом туру</li><li>Проживання 2 ночі (готель 3★)</li><li>Сніданки</li><li>Супровід координатора</li></ul>
+          <h3>Коротка програма</h3>
+          <ol><li>День 1: заїзд, поселення, вечірня прогулянка</li><li>День 2: Синевир + легкий маршрут до оглядових точок</li><li>День 3: вільний час, виїзд</li></ol>
+          <p class="price">від 9 800 грн / особа</p>
+          <button class="btn btn-primary" type="button" data-action="book">Забронювати</button>
+          <p class="form-success" id="booking-hint" hidden>Дякуємо! Заявку прийнято. Ми звʼяжемося з вами найближчим часом.</p>
+        </article>
       </div>
-    </article>
+    </section>
   </main>
-
   <footer class="site-footer">
   <div class="container footer-inner">
+    <p class="footer-note">
+      Порада: для найкращих цін перевіряйте сезонність та бронюйте завчасно.
+    </p>
     <p>&copy; 2025 TravelMate. Всі права захищено.</p>
+    <p class="footer-meta">Сьогодні: <span id="footer-date"></span></p>
   </div>
 </footer>
 </body>
